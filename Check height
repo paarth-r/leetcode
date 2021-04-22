@@ -1,0 +1,20 @@
+class Solution:
+    def heightChecker(self, heights: List[int]) -> int:
+#defining variables
+        counter = 0        
+        expected = []
+        height = []
+        for n in heights:
+            height.append(n)
+#making expected        
+        for n in heights:
+            expected.append(min(height))
+            height.remove(min(height))
+            
+#check if height[i] == expected[i]            
+        for n in range(len(expected)):
+            if expected[n] != heights[n]:
+                counter += 1
+        
+        
+        return counter
