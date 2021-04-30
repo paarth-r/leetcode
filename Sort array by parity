@@ -1,0 +1,9 @@
+class Solution:
+    def sortArrayByParity(self, A: List[int]) -> List[int]:
+        newl = []
+        for n in A:
+            if n%2 == 0:
+                newl.insert(0,n)
+            else:
+                newl.append(n)
+        return newl
