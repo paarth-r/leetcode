@@ -1,0 +1,13 @@
+class Solution:
+    def hammingDistance(self, x: int, y: int) -> int:
+        counter = 0
+        xs = "{0:b}".format(x)
+        ys = "{0:b}".format(y)
+        if len(xs) < len(ys):
+            xs = xs.zfill(len(ys))
+        else:
+            ys = ys.zfill(len(xs))
+        for n in range(len(xs)):
+            if ys[n] != xs[n]:
+                counter += 1
+        return counter
