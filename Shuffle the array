@@ -1,0 +1,10 @@
+class Solution:
+    def shuffle(self, nums: List[int], n: int) -> List[int]:
+        indexcount = 1
+        l1 = nums[:len(nums)//2]
+        l2 = nums[len(nums)//2:]
+        nums.clear()
+        for n in l2:
+            l1.insert(indexcount,n)
+            indexcount += 2
+        return l1 
