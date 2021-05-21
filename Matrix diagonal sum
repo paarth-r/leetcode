@@ -1,0 +1,18 @@
+class Solution:
+    def diagonalSum(self, mat: List[List[int]]) -> int:
+        ad = 0
+        _counter = 0
+        counter = -1
+        for n in mat:
+            print(ad)
+            print(_counter,counter)
+            print(n[_counter], n[counter])
+            ad += n[_counter]
+            ad += n[counter]
+            counter -= 1
+            _counter += 1
+        rows = len(mat)
+        if rows %2 != 0:
+            ad -= mat[rows//2][rows//2]
+        return ad
+            
