@@ -1,0 +1,12 @@
+class Solution:
+    def shift(self, c, num):
+        return chr(ord(c) + int(num))
+    def replaceDigits(self, s: str) -> str:
+        li = []
+        for n in range(len(s)):
+            
+            if n % 2 != 0:
+                li.append(self.shift(s[n-1],s[n]))
+            else:
+                li.append(s[n])           
+        return "".join(li) 
