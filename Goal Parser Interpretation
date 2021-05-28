@@ -1,0 +1,22 @@
+class Solution:
+    def interpret(self, command: str) -> str:
+        s  = ""
+        li = []
+        for n in command:
+            s = s + n
+            if s == "G":
+                li.append(s)
+                s = ""
+                
+            if s == "()":
+                li.append("o")
+                s = ""
+                
+                
+            if s == "(al)":
+                li.append("al")
+                s = ""
+        return "".join(li)
+                
+            
+        
