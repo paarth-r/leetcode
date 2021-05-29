@@ -1,0 +1,6 @@
+class Solution:
+    def checkZeroOnes(self, s: str) -> bool:        
+        ones= max(s.split('0'))
+        zeros=max(s.split('1'))
+        return len(ones)>len(zeros)
+            
