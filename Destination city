@@ -1,0 +1,11 @@
+class Solution:
+    def destCity(self, paths: List[List[str]]) -> str:
+        a = set()
+        d = set()
+        for n in paths:
+            a.add(n[0])
+            d.add(n[1])
+        for n in d:
+            if n not in a:
+                return n
+            
