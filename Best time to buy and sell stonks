@@ -1,0 +1,14 @@
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        li = []
+        big = 0
+        for n in reversed(prices):
+            if n > big:
+                big = n
+            li.insert(0,big)
+        big = 0
+        for i in range(len(prices)-1):
+            if li[i+1] - prices[i] > big:
+                big = li[i+1] - prices[i]
+        return big
+            
