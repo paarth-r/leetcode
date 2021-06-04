@@ -1,0 +1,21 @@
+class Solution:
+    def flip(self, image):
+        for n in image:
+            newmat = []
+            for n in image:
+                newmat.append(n[::-1])
+            return newmat
+        
+    def invert(self, newmat):
+        for i in newmat:
+            for n in range(len(i)):
+                if i[n] == 0:
+                    i[n] = 1
+                else:
+                    i[n] = 0
+        return newmat
+        
+                
+            
+    def flipAndInvertImage(self, image: List[List[int]]) -> List[List[int]]:
+        return self.invert(self.flip(image))
