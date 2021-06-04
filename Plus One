@@ -1,0 +1,9 @@
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        for n in range(len(digits)):
+            digits[n] = str(digits[n])
+            
+        num = int("".join(digits))
+        num += 1
+        li = list(str(num))
+        return li
