@@ -1,0 +1,23 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        #converting linkedlist into number
+        def convert(listnode):
+            digit = listnode
+            valist = []
+            while digit:
+                valist.append(str(digit.val))
+                digit = digit.next
+            valist = valist[::-1]  
+            return int("".join(valist))
+        ans = list(str(convert(l1)+convert(l2)))[::-1]
+        ansL = ListNode(ans[0])
+        curr = ansL
+        for n in ans[1:len(ans)]:
+            curr.next = ListNode(n)
+            curr = curr.next
+        return ansL
