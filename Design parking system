@@ -1,0 +1,14 @@
+class ParkingSystem:
+
+    def __init__(self, big: int, medium: int, small: int):
+        self.spaceleft = {}
+        self.spaceleft[1] = big
+        self.spaceleft[2] = medium
+        self.spaceleft[3] = small
+        
+        
+    def addCar(self, carType: int) -> bool:
+        if self.spaceleft[carType] == 0:
+            return False
+        self.spaceleft[carType] -= 1
+        return True
