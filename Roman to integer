@@ -1,0 +1,12 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        roman = {"I":1,"V":5,"X":10,"L":50, "C":100,"D":500,"M":1000}
+        counter = 0
+        for n in range(len(s)):
+            if n < len(s)-1:
+                if roman[s[n]] < roman[s[n+1]]:
+                    counter += roman[s[n]] * -1
+                else:
+                    counter += roman[s[n]]
+            else:
+                return counter + roman[s[n]]
