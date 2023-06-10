@@ -1,14 +1,12 @@
-class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
-        li = []
-        big = 0
-        for n in reversed(prices):
-            if n > big:
-                big = n
-            li.insert(0,big)
-        big = 0
-        for i in range(len(prices)-1):
-            if li[i+1] - prices[i] > big:
-                big = li[i+1] - prices[i]
-        return big
-            
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int min_price = 1000000;
+        int profit = 0;
+        for(int price : prices){
+            min_price = std::min(price, min_price);
+            profit = std::max(profit, price - min_price);
+        }
+        return profit;
+    }
+};
