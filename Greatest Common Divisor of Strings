@@ -1,0 +1,21 @@
+Problem:
+
+For two strings s and t, we say "t divides s" if and only if s = t + ... + t (i.e., t is concatenated with itself one or more times).
+Given two strings str1 and str2, return the largest string x such that x divides both str1 and str2.
+
+
+Logic:
+Check for the first condition by checking if str1 + str 2 is the same as str2 + str1. If str2 is a part of str1 then it should not matter if it is added to the front or rear of a string, the resulting string should be the same.
+then take the Greatest common denominator of the lengths of the strings to find the longest common substring. return one of the strings, spliced from [0, greatest common denominator]
+
+
+Solution:
+---------------------------------------------------------
+class Solution:
+    import math
+    def gcdOfStrings(self, str1: str, str2: str) -> str:
+        if str1 + str2 == str2+str1:
+            return str1[:math.gcd(len(str1), len(str2))]
+        else:
+            return ''
+---------------------------------------------------------
